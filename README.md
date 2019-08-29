@@ -2,7 +2,7 @@
 
 本项目是在对 [EXPLOSION prodigy](https://prodi.gy/) 逆向工程的基础上增添若干功能实现。
 
-![readme_1.png](static/img/readme_1.png)
+![readme_1.png](/static/img/readme_1.png)
 
 ## 使用文档
 
