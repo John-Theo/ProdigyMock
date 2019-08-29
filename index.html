@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Progidy</title>
+    <link rel="stylesheet" href="static/element/index.min.css">
+    <link rel="stylesheet" href="static/css/index.min.css">
+    <link rel="shortcut icon" href="static/img/logo.ico" type="image/x-icon" />
+</head>
+
+<body>
+    <el-container id="container" v-cloak>
+        <el-container>
+            <el-aside>
+                <header class="menu-cell">
+                    <img src="static/img/prodigy.svg" alt="">
+                </header>
+                
+                <div class="menu-cell" v-for="(lines, header) in m2d5r5bQQbei8AAX0">
+                    <header>{{ header.replace('_', ' ') }}</header>
+                    <div class="menu-lines">
+                        <el-row class="menu-info" v-for="(value, key) in lines">
+                            
+                            <template v-if="key.indexOf('$') == 0">
+                                <el-col :span="19" class="info-key bar">
+                                    <div class="progress" v-bind:style="`width:${value}%`"></div>
+                                </el-col>
+                                <el-col :span="5" class="info-value bar">{{value}}%</el-col>
+                            </template>
+                            
+                            <template v-else-if="key.indexOf('_') == 0">
+                                <el-button @click="hV24yd8ryOvIyLjE4eyGj('undo', key.slice(1,))">
+                                    <el-col :span="21" class="info-key his-title">{{nyMjVJ8919WFGk[key.slice(1,)].body.slice(0,12)}}...</el-col>
+                                    <el-col :span="3" class="info-value"><i v-bind:class="value"></i></el-col>
+                                </el-button>
+                            </template>
+                            
+                            <template v-else>
+                                <el-col :span="15" class="info-key">{{key}}</el-col>
+                                <el-col :span="9" class="info-value">{{value}}</el-col>
+                            </template>
+                        </el-row>
+                    </div>
+                </div>
+                <footer class="menu-cell">
+                    © 2019 Susfinteq (Prodigy v1.5.1)
+                </footer>
+            </el-aside>
+            <el-main id="main-content" v-loading="contentLoading">
+                <el-container id="cards">
+                    <el-card shadow="always" :body-style="{ padding: '0px' }" v-for="(news, nid) in nvvw2kb6GdNiY11A" :index="nid" ref="card">
+                        <div class="mask" @click="wPy2l4mWwWgt0xVglJnGZFERvyRy=nid" 
+                            v-bind:style="{opacity: nid!=wPy2l4mWwWgt0xVglJnGZFERvyRy?1:0, pointerEvents: nid!=wPy2l4mWwWgt0xVglJnGZFERvyRy?'all':'none'}"></div>
+                        <div class="card__labels" v-if="nid==wPy2l4mWwWgt0xVglJnGZFERvyRy">
+                            <el-button plain v-for="(tag, tid) in e28Aw6x4RwYS8PrPN" class="label-btn" 
+                            v-bind:class="ajDdPN579WbCQqL2501xETdNmZNZ==tid?'active':''" @click="c68L2JZoGGgIARqM09N7OHM5VLGxAM(tid)" ref="label">
+                                {{tag}} <span>{{tid+1}}</span>
+                            </el-button>
+                            <el-switch v-model="batchOperation" active-text="batch" inactive-text="single"></el-switch>
+                        </div>
+                        <div style="height: 15px" v-show="nid!=wPy2l4mWwWgt0xVglJnGZFERvyRy"></div>
+                        <div class="card__content" @mouseup="tDykGAOPndlC08q4x1y7wSeZv1"> 
+                            <div class="paragraph" v-for="paragraph in news.tokens.paragraphs">
+                                <token v-for="token in paragraph" v-if="token.visible" :anchor="token.id"  @click="ceB1JQ0zyWyuxWMmLdDY5ilO61m(token)"
+                                v-bind:class="token.entity?'phrase':null" v-bind:title="token.entity?token.entity.source:null">
+                                    <template v-if="!token.entity">{{ token.text }}</template>
+                                    <template v-else>
+                                        {{ token.entity.text }}
+                                        <span v-bind:style="{opacity: (token.entity.confidence-0.8)*5}">
+                                            {{ e28Aw6x4RwYS8PrPN[token.entity.label] }}
+                                        </span>
+                                    </template>
+                                </token>
+                            </div>
+                        </div>
+                        <div class="content__source">
+                            <a :href="news.link" target="_blank">
+                                <strong>SOURCE: </strong>{{ news.source }} &nbsp;&nbsp; 
+                                <strong>ID: </strong>{{ news.id }}
+                            </a>
+                        </div>
+                    </el-card>
+                </el-container>
+                <div class="toolBar">
+                    <el-row justify="center">
+                        <el-col :span="6" v-bind:style="{backgroundColor: tool.bgc}" v-for="(tool, action) in tools">
+                                <el-button @click="hV24yd8ryOvIyLjE4eyGj(action)" :icon="tool.icon" :loading="action==='upload' && s5ynGooNWy4h7qNg0n">
+                                    {{action}}
+                                </el-button>
+                        </el-col>
+                    </el-row>
+                </div>
+            </el-main>
+        </el-container>
+    </el-container>
+    
+</body>
+
+
+<script src="static/js/bundled.js?a78v93h"></script>
+
+
+
+</html>
